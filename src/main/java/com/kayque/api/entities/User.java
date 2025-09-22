@@ -1,7 +1,6 @@
 package com.kayque.api.entities;
 
 import jakarta.persistence.*;
-import lombok.Generated;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,7 +11,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "user")
+@Table(name = "user_system")
 public class User {
 
     @Id
@@ -20,8 +19,8 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "full_name")
-    private String fullName;
+    @Column(name = "user_name", unique = true)
+    private String userName;
 
     @Column(name = "cpf/cnpj", unique = true)
     private String cpf_cnpj;
